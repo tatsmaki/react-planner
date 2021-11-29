@@ -1,0 +1,46 @@
+@use 'src/fonts';
+@use 'src/colors';
+
+@mixin link {
+  @include fonts.maven-bold;
+
+  position: relative;
+  width: fit-content;
+  display: inline-flex;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  // margin-left: 100px;
+
+  &:hover {
+    color: colors.$pink-hover;
+  }
+}
+
+.link {
+  @include link;
+}
+
+@keyframes link-active {
+  from {
+    opacity: 0;
+    width: 0px;
+  }
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+.link-active {
+  @include link;
+
+  &::after {
+    position: absolute;
+    bottom: -3px;
+    content: '';
+    width: 100%;
+    border-bottom: 2px solid #fdf1ff;
+    animation: link-active 0.3s ease-in-out;
+  }
+}

@@ -1,0 +1,20 @@
+.title {
+  position: relative;
+  margin: 0;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 43px;
+  color: white;
+
+  &::after {
+    position: absolute;
+    top: 18px;
+    right: -18px;
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fdf1ff;
+  }
+}

@@ -1,0 +1,45 @@
+.cards {
+  height: calc(100% - 136px);
+  padding: 50px 8px;
+  box-sizing: border-box;
+
+  @media screen and(max-width: 768px) {
+    height: calc(100% - 232px);
+    padding: 14px 8px;
+  }
+}
+
+.grid {
+  height: 100%;
+  padding-left: 142px;
+  padding-right: 134px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 175px);
+  grid-auto-flow: column;
+  row-gap: 30px;
+  column-gap: 30px;
+  overflow-y: scroll;
+
+  @media screen and(max-width: 1440px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 160px);
+    padding-left: 16px;
+    padding-right: 8px;
+  }
+
+  @media screen and(max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 175px);
+    row-gap: 14px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cacccc;
+    border-radius: 2px;
+  }
+}

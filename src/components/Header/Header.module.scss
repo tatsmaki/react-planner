@@ -1,0 +1,10 @@
+@use 'src/page';
+@use 'src/colors';
+
+.header {
+  @include page.wrapper;
+
+  height: 50px;
+  min-height: 50px;
+  background-color: colors.$blue;
+}

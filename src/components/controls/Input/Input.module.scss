@@ -1,0 +1,33 @@
+@use 'src/fonts';
+@use 'src/colors';
+
+.input-with-icon {
+  width: 360px;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid colors.$grey;
+
+  @media screen and(max-width: 1440px) {
+    width: 220px;
+  }
+
+  @media screen and(max-width: 768px) {
+    order: -1;
+    width: 290px;
+  }
+}
+
+.input {
+  @include fonts.maven-normal;
+
+  width: 100%;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding: 7px;
+  color: colors.$grey-text;
+
+  &::placeholder {
+    color: colors.$grey;
+  }
+}

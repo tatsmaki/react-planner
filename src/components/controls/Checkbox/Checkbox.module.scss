@@ -1,0 +1,41 @@
+@use 'src/fonts';
+@use 'src/colors';
+
+.checkbox {
+  display: inline-flex;
+  user-select: none;
+
+  &:hover {
+    .label::before {
+      background-color: colors.$pink-hover;
+    }
+  }
+}
+
+.input {
+  opacity: 0;
+
+  &:checked + .label::before {
+    background-image: url('./checked.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.label {
+  @include fonts.maven-normal;
+
+  margin-left: 16px;
+  position: relative;
+  color: colors.$grey-text;
+
+  &::before {
+    position: absolute;
+    left: -36px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: colors.$grey;
+    border-radius: 2px;
+  }
+}

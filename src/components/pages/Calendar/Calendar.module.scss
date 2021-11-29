@@ -1,0 +1,5 @@
+@use 'src/page';
+
+.calendar {
+  @include page.main;
+}

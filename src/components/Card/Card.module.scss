@@ -1,0 +1,64 @@
+@use 'src/fonts';
+@use 'src/colors';
+
+@keyframes card {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  animation: card 0.3s ease-in-out;
+}
+
+.card-major {
+  background-color: #fdf1ff;
+}
+
+.card-minor {
+  background-color: #fdfdfd;
+}
+
+.card-large {
+  grid-row: span 2;
+}
+
+.card-small {
+  grid-row: span 1;
+}
+
+.card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.card-header {
+  @include fonts.maven-bold-title;
+
+  margin: 0;
+  margin-top: 10px;
+  color: colors.$grey-text;
+}
+
+.card-name {
+  @include fonts.maven-normal-title;
+
+  color: colors.$grey-text;
+}
+
+.date-with-time {
+  @include fonts.maven-normal;
+
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: colors.$blue;
+}
